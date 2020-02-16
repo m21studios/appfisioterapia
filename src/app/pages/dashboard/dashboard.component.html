@@ -1,0 +1,84 @@
+<!--Header Nav Dashboard-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Dashboard</span>
+    </div>
+</nav>
+
+<!--Cards Dashboard-->
+<div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Citas para hoy</h5>
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="card-text">Estas son las Citas que tienes programadas para el dia de hoy.</p>
+            </div>
+            <div class="col-sm-6">
+              <h1 style="font-size: 80px; text-align: center;">{{numerodecitasparahoy}}</h1>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Pacientes Registrados</h5>
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="card-text">Numero de pacientes Registrados en tu Base de datos.</p>
+            </div>
+            <div class="col-sm-6">
+              <h1 style="font-size: 80px; text-align: center;">{{numerodepacientes}}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="line"></div>
+
+<!--Lista de citas asignadas para hoy-->
+<div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">CITAS ASIGNADAS PARA HOY</h5>
+
+          <!--tabla donde se muestran las citas asignadas-->
+          <table class="table table-striped">
+            <thead>
+                <tr>
+                  <th>Identificacion</th>
+                  <th>Nombres</th>
+                  <th>Apellidos</th>
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                </tr>
+            </thead>
+              
+            <tbody>
+              <tr *ngFor="let data of listadecitas">
+                <td>{{data.identificacion}}</td>
+                <td>{{data.nombres}}</td>
+                <td>{{data.apellidos}}</td>
+                <td>{{data.fecha}}</td>
+                <td>{{data.hora}}</td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+    
+</div>
+
+
+
+
+

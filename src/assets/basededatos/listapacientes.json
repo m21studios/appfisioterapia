@@ -1,0 +1,30 @@
+[
+    {
+        "identificacion":"1094240625",
+        "nombres":"Edwin Gustavo",
+        "apellidos":"Hernandez Duque",
+        "genero":"M",
+        "edad":"33"
+    },
+    {
+        "identificacion":"1094",
+        "nombres":"Mathias Geronimo",
+        "apellidos":"Hernandez Lozano",
+        "genero":"M",
+        "edad":"2"
+    },
+    {
+        "identificacion":"1094458",
+        "nombres":"Kellys",
+        "apellidos":"Lozano Flores",
+        "genero":"F",
+        "edad":"28"
+    },
+    {
+        "identificacion":"1094458458",
+        "nombres":"Maria del Carmen",
+        "apellidos":"Hernandez Lozano",
+        "genero":"F",
+        "edad":"1"
+    }
+]

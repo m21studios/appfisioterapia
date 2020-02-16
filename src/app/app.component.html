@@ -1,0 +1,75 @@
+
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>Consultorio de Fisioterapia</h3>
+      <strong>CF</strong>
+    </div>
+
+    <ul class="list-unstyled components">
+         
+      <li>
+        <a (click)="iradasboard()" routerLinkActive="active">
+          <i class="fas fa-briefcase"></i>
+          Dashboard
+        </a>
+        <a (click)="nuevaCita()" routerLinkActive="active">
+          <i class="fas fa-briefcase"></i>
+          Agenda
+        </a>
+        <a (click)="listadeHistorias()" routerLinkActive="active">
+          <i class="fas fa-copy"></i>
+          Historial
+        </a>
+              
+      </li>
+        <li>
+          <a (click)="listadePacientes()" routerLinkActive="active">
+            <i class="fas fa-image"></i>
+            Pacientes
+          </a>
+        </li> 
+      </ul>
+
+      <ul class="list-unstyled CTAs">
+        <li>
+          <a href="#" class="article" routerLinkActive="active">Inicio</a>
+        </li>
+      </ul>
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+    <div class="introduccion" *ngIf="activar">
+      <h1>Consultorio de Fisioterapia</h1>
+      <h2>Doctora Yaritza Lopez Varon</h2>
+      <h4>Nit. 45.525.570-0</h4>
+      <p>Email: lvyari@hotmail.com - lvyari14@hotmail.com</p>
+      <p>Tel: 3134233836</p>
+      <p>Calle 2 del Comercio - Rio Viejo, Bolivar.</p>
+
+      
+      <div class="line"></div>
+
+      
+    </div>
+    
+    <router-outlet></router-outlet>
+
+    
+
+    
+    
+    
+    
+ 
+  </div>
+</div>
+
+
+
+
+
+
+

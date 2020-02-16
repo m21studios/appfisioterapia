@@ -1,0 +1,52 @@
+<!--Header Nav Dashboard-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Historias Clinicas</span>
+         <!--input para consultar historias clinicas de pacientes-->
+         <form class="form-inline my-2 my-lg-0">
+            <input [(ngModel)]="identificacionDelPaciente" [ngModelOptions]="{standalone: true}" class="form-control mr-sm-2" type="search" placeholder="identificacion" aria-label="Search">
+            <button (click)="consultarPaciente()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar Historia</button>
+        </form>
+    </div>
+</nav>
+
+<div class="line"></div>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th># Historia Clinica</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+        <th>Genero</th>
+        <th>Telefono</th>
+        <th>Carnet</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of listadehistorias">
+        <td>{{data.numero}}</td>
+        <td>{{data.nombres}}</td>
+        <td>{{data.apellidos}}</td>
+        <td>{{data.edad}}</td>
+        <td>{{data.genero}}</td>
+        <td>{{data.telefono}}</td>
+        <td>{{data.carnet}}</td>
+        <td>
+          <span>
+             <!--Consultar historial--> 
+             <i class="material-icons" (click)="AgregarNuevoEvento()">
+              post_add
+            </i>
+            <!--hoja de evento-->
+            <i class="material-icons" (click)="MostrarHojadeEvolucion()">
+              assignment
+            </i>
+          </span>
+        </td>
+      </tr>
+      
+    </tbody>
+</table>
