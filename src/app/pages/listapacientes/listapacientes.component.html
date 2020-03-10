@@ -17,7 +17,7 @@
       <form class="form-inline my-2 my-lg-0">
           <input [(ngModel)]="identificacionDelPaciente" [ngModelOptions]="{standalone: true}" class="form-control mr-sm-2" type="search" placeholder="identificacion" aria-label="Search">
           <button (click)="consultarPaciente()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar Paciente</button>
-          <button (click)="consultarPaciente()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Nuevo Paciente</button>
+          
       </form>
   </div>
   
@@ -25,120 +25,131 @@
 
 <br><br>
 <!--FORMULARIO-->
-<form>
-  <label>Informacion del Paciente</label>
-  <div class="form-row">
-    <div class="col-4">
-      <input 
-      [(ngModel)]="nuevopaciente.identificacion" 
-      [ngModelOptions]="{standalone: true}" 
-      type="text" 
-      class="form-control" 
-      id="identificacion" 
-      placeholder="Identificacion"
-      >
-    </div>
 
-    <div class="col-4">
-      <input 
-        [(ngModel)]="nuevopaciente.nombres" 
-        [ngModelOptions]="{standalone: true}" 
-        type="text" 
-        class="form-control" 
-        id="nombres" 
-        placeholder="Nombres">
-    </div>
-
-    <div class="col-4">
-      <input 
-        [(ngModel)]="nuevopaciente.apellidos"
-        [ngModelOptions]="{standalone: true}" 
-        type="text" 
-        class="form-control" 
-        id="apellidos" 
-        placeholder="Apellidos">
-    </div>
-  
-  </div>
-  <br>
-  <div class="form-row">
-    <div class="col-4">
-      <input 
-        [(ngModel)]="nuevopaciente.telefono" 
-        [ngModelOptions]="{standalone: true}" 
-        type="text" 
-        class="form-control" 
-        id="telefono" 
-        placeholder="Telefono">
-    </div>
-
-    <div class="col-4">
-      
-    </div>
-
-    <div class="col-4">
-      
-    </div>
-  </div>
-  <br>
-  <!--fecha de nacimiento-->
-  <label>Fecha de Nacimiento</label>
-  <div class="form-row">
-    
-    <div class="col-4">
-      <input 
-        [(ngModel)]="nuevopaciente.dianacimiento" 
-        [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Dia">
-    </div>
-    <div class="col-2">
-      <input 
-        [(ngModel)]="nuevopaciente.mesnacimiento" 
-        [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Mes">
-    </div>
-    <div class="col-2">
-      <input 
-        [(ngModel)]="nuevopaciente.anionacimiento" 
-        [ngModelOptions]="{standalone: true}"
-        type="text" class="form-control" placeholder="Año">
-    </div>
-    
-    
-  </div>
-  <br>
-  <div class="form-row">
-    <div class="col-6">
-      <label>Genero</label>
-      <div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-          <label class="form-check-label" for="inlineCheckbox1">Masculino</label>
+<div class="card">
+  <div class="card-body">
+    <form>
+      <label>Informacion del Paciente</label>
+      <div class="form-row">
+        <div class="col-4">
+          <input 
+          [(ngModel)]="nuevopaciente.identificacion" 
+          [ngModelOptions]="{standalone: true}" 
+          type="text" 
+          class="form-control" 
+          id="identificacion" 
+          placeholder="Identificacion"
+          >
         </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-          <label class="form-check-label" for="inlineCheckbox2">Femenino</label>
+        <div class="col-4">
+          <input 
+            [(ngModel)]="nuevopaciente.nombres" 
+            [ngModelOptions]="{standalone: true}" 
+            type="text" 
+            class="form-control" 
+            id="nombres" 
+            placeholder="Nombres">
         </div>
+    
+        <div class="col-4">
+          <input 
+            [(ngModel)]="nuevopaciente.apellidos"
+            [ngModelOptions]="{standalone: true}" 
+            type="text" 
+            class="form-control" 
+            id="apellidos" 
+            placeholder="Apellidos">
+        </div>
+      </div>
+      
+      <br>
+      <div class="form-row">
+        <div class="col-4">
+          <input 
+            [(ngModel)]="nuevopaciente.telefono" 
+            [ngModelOptions]="{standalone: true}" 
+            type="text" 
+            class="form-control" 
+            id="telefono" 
+            placeholder="Telefono">
+        </div>
+    
+        <div class="col-4">
+          
+        </div>
+    
+        <div class="col-4">
+          
+        </div>
+      </div>
+      <br>
+      <!--fecha de nacimiento-->
+      <label>Fecha de Nacimiento</label>
+      <div class="form-row">
         
+          <div class="col-2">
+            <input 
+              [(ngModel)]="nuevopaciente.dianacimiento" 
+              [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Dia">
+          </div>
+          <div class="col-2">
+            <input 
+              [(ngModel)]="nuevopaciente.mesnacimiento" 
+              [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Mes">
+          </div>
+          <div class="col-2">
+            <input 
+              [(ngModel)]="nuevopaciente.anionacimiento" 
+              [ngModelOptions]="{standalone: true}"
+              type="text" class="form-control" placeholder="Año">
+          </div>
+       
       </div>
-    </div>
+      <br>
+      <div class="form-row">
+        <div class="col-6">
+          <label>Genero</label>
+          <div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">Masculino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+              <label class="form-check-label" for="inlineCheckbox2">Femenino</label>
+            </div>
+            
+          </div>
+        </div>
+    
+        <div class="col-6">
+          <label>Esta embarazada?</label>
+          <div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">Si</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+              <label class="form-check-label" for="inlineCheckbox2">No</label>
+            </div>
+          </div>
+        </div>
 
-    <div class="col-6">
-      <label>Esta embarazada?</label>
-      <div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-          <label class="form-check-label" for="inlineCheckbox1">Si</label>
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="col-6">
+          <button (click)="GuardarNuevoPaciente()" class="btn btn-primary my-2 my-sm-0 btn-block btn-lg" type="submit">Registrar Nuevo Paciente</button>
         </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-          <label class="form-check-label" for="inlineCheckbox2">No</label>
+        <div class="col-6">
+          
         </div>
       </div>
-    </div>
+    
+    </form>
   </div>
-
-</form>
-
-
+</div>
 
 <div class="line"></div>
 

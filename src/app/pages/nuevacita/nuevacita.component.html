@@ -5,8 +5,9 @@
         <!--input para consultar pacientes-->
         <form class="form-inline my-2 my-lg-0">
             <input [(ngModel)]="identificacionDelPaciente" [ngModelOptions]="{standalone: true}" class="form-control mr-sm-2" type="search" placeholder="identificacion" aria-label="Search">
-            <button (click)="consultarPaciente()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar Paciente</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" (click)="consultarPaciente()">Buscar Paciente</button>
         </form>
+        
     </div>
 </nav>
 
@@ -112,7 +113,9 @@
                         aria-describedby="emailHelp">
                     <small id="emailHelp" class="form-text text-muted">Hora de asignacion para la cita.</small>
                 </div>
-
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" (click)="AsignarNuevaCita()">Asignar Cita</button>
+                </div>
                
 
                 

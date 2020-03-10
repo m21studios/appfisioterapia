@@ -12,7 +12,7 @@ export class ListadehistoriasComponent implements OnInit {
   public identificacionDelPaciente: any;
   public listadehistorias:Historias[]; 
 
-  public dataUrl: any = '../../../assets/basededatos/listadehistoriasclinicas.json';
+  //public dataUrl: any = '../../../assets/basededatos/listadehistoriasclinicas.json';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -34,12 +34,12 @@ export class ListadehistoriasComponent implements OnInit {
   }
 
   cargarHistoriasClinicas(){
-    this.httpClient.get(this.dataUrl).subscribe(data => {
+    /*this.httpClient.get(this.dataUrl).subscribe(data => {
       console.log('datos traidos del local server: ', data);
       this.listadehistorias = data as Historias[];
       console.log("la lista de las historias clinicas son: ", this.listadehistorias);
       
-    })
+    })*/
   }
 
 }

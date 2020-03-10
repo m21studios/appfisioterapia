@@ -1,8 +1,8 @@
 export interface Citas{
-    identificacion: string,
-    nombres: string,
-    apellidos: string,
-    fecha: string,
-    hora: string,
-    telefono: string
+    identificacion: any,
+    nombres: any,
+    apellidos: any,
+    fecha: any,
+    hora: any,
+    telefono: any
 }

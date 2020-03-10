@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlmacenamientoService } from '../app/services/almacenamiento.service';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,18 @@ export class AppComponent implements OnInit{
   title = 'app-fisioterapia';
   activar:boolean;
 
-  constructor( public navegar : Router) { 
+  constructor( 
+    public navegar : Router, 
+    public almacenamiento : AlmacenamientoService
+    ) { 
     this.activar = true;
     
     
   }
 
   ngOnInit() {
+    this.almacenamiento.comprobarIndexdb();
+    this.almacenamiento.AbrirBaseDeDatos();
   }
 
   iradasboard(){

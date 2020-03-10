@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Pacientes } from '../../models/pacientes';
 import { Nuevopaciente } from '../../models/nuevopaciente';
+import { AlmacenamientoService } from '../../../app/services/almacenamiento.service';
 
 @Component({
   selector: 'app-listapacientes',
@@ -12,7 +13,7 @@ import { Nuevopaciente } from '../../models/nuevopaciente';
 export class ListapacientesComponent implements OnInit {
 
   public identificacionDelPaciente: any;
-  public listadepacientes:Pacientes[];
+  public listadepacientes:Pacientes [];
 
   public nuevopaciente:Nuevopaciente = {
     identificacion:'',
@@ -28,54 +29,55 @@ export class ListapacientesComponent implements OnInit {
     embarazada: ''
   }
 
+  public misdatos:any = [];
+
   
   public dataJson: any;
-  public dataUrl: any = '../../../assets/basededatos/listapacientes.json';
+  //public dataUrl: any = '../../../assets/basededatos/listapacientes.json';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, public api: AlmacenamientoService) { }
 
   ngOnInit() {
     this.cargarListasdePacientes();
+    
   }
 
-  cargarListasdePacientes(){
-    this.httpClient.get(this.dataUrl).subscribe(data => {
-      console.log('datos traidos del local server: ', data);
-      this.listadepacientes = data as Pacientes[];
-      console.log("la lista de pacientes es: ", this.listadepacientes);
-      
-    })
+  public cargarListasdePacientes(){
+    //this.api.GetAllPacientes();
+    
   }
 
-  consultarPaciente(){ 
+  public consultarPaciente(){ 
     console.log("la identificacion del pacientes es: ", this.identificacionDelPaciente);
   }
 
   //Acciones
-  AgregarNuevaCita(){
+  public AgregarNuevaCita(){
     console.log("se agregara una nueva cita");
   }
 
-  AgregarNuevoEvento(){
+  public AgregarNuevoEvento(){
     console.log("se agregara una nueva evento");
   }
 
-  ConsultarHistorial(){
+  public ConsultarHistorial(){
     console.log("se consultara su historial");
   }
 
-  CargarEventosdelPaciente(){
+  public CargarEventosdelPaciente(){
     console.log("se consultara sus eventos");
   }
 
-  GuardarNuevoPaciente(){
+  public GuardarNuevoPaciente(){
+    console.log('se registro un nuevo paciente con los siguientes datos: ',this.nuevopaciente);
+    this.api.AgregarNuevoPacientes(this.nuevopaciente);
     
-    this.nuevopaciente.fechadenacimiento = this.nuevopaciente.dianacimiento+'/'+this.nuevopaciente.mesnacimiento+'/'+this.nuevopaciente.anionacimiento;
-    console.log("el nuevo paciente es: ",this.nuevopaciente);
-
+    setTimeout(() => {
+      this.limpiarInpust();
+    },2000);
   }
 
-  limpiarInpust(){
+  public limpiarInpust(){
     this.nuevopaciente.identificacion = '';
     this.nuevopaciente.nombres = '';
     this.nuevopaciente.apellidos = '';
@@ -90,3 +92,55 @@ export class ListapacientesComponent implements OnInit {
   }
 
 }
+
+
+
+
+/*let peticion = self.indexedDB.open('appFisioterapia',1);
+    let db: any; 
+    let lastIndex = 0;
+
+    
+    
+    peticion.onsuccess = function (event) { 
+      
+      console.log ('[onsuccess]', peticion.result); 
+      db = peticion.result; // === request.result 
+
+      var transaccion = db.transaction(["pacientes"]);
+      var datos = transaccion.objectStore('pacientes');
+
+      var keyRange = IDBKeyRange.lowerBound(0);
+      var cursorRequest = datos.openCursor(keyRange);
+
+      cursorRequest.onsuccess = function(event){
+        var resultado = event.target.result;
+
+        if(resultado === null || resultado === undefined){
+          console.log('No hay Datos..',event.result);
+          //event.resolve(this.misdatos);
+        }else{
+
+          this.misdatos = [];
+          this.misdatos.push(resultado.value);
+          this.listadepacientes = this.misdatos;
+
+          if (resultado.value.id > lastIndex) {
+            lastIndex = resultado.value.id;
+          }
+
+          resultado.continue ();
+        }
+      }
+
+      cursorRequest.onerror = function (e) {
+        e.reject("Something went wrong!!!");
+        console.log('Error al cargar los datos de la lista de pacientes: ',e.value);
+      };
+    }
+           
+
+    peticion.onerror = function(event) {
+      // Handle errors!
+      console.log('error al descargar los datos del paciente: ',peticion);
+    };*/

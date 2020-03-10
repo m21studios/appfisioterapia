@@ -16,7 +16,7 @@
               <p class="card-text">Estas son las Citas que tienes programadas para el dia de hoy.</p>
             </div>
             <div class="col-sm-6">
-              <h1 style="font-size: 80px; text-align: center;">{{numerodecitasparahoy}}</h1>
+              <h1 style="font-size: 80px; text-align: center;" id="totalcitas"></h1>
             </div>
           </div>
           
@@ -32,7 +32,7 @@
               <p class="card-text">Numero de pacientes Registrados en tu Base de datos.</p>
             </div>
             <div class="col-sm-6">
-              <h1 style="font-size: 80px; text-align: center;">{{numerodepacientes}}</h1>
+              <h1 style="font-size: 80px; text-align: center;" id="totalpacientes"></h1>
             </div>
           </div>
         </div>
@@ -60,15 +60,18 @@
                   <th>Hora</th>
                 </tr>
             </thead>
-              
-            <tbody>
-              <tr *ngFor="let data of listadecitas">
+              <!--*ngFor="let data of listadecitas, let i = index"-->
+              <!-- 
+                <tr>
                 <td>{{data.identificacion}}</td>
                 <td>{{data.nombres}}</td>
                 <td>{{data.apellidos}}</td>
                 <td>{{data.fecha}}</td>
                 <td>{{data.hora}}</td>
               </tr>
+              -->
+            <tbody id="dataIndexed">
+              
             </tbody>
           </table>
           
